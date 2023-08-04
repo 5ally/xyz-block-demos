@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "my-plugin/xyz-block-csr",
+  "version": "1.0.0",
+  "title": "XYZ Block (CSR): context.postId demo",
+  "category": "widgets",
+  "icon": "smiley",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "my-plugin",
+  "editorScript": "file:./index.js"
+}
