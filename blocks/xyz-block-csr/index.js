@@ -30,6 +30,16 @@ module.exports = window["wp"]["blocks"];
 
 module.exports = window["wp"]["element"];
 
+/***/ }),
+
+/***/ "./src/xyz-block-csr/block.json":
+/*!**************************************!*\
+  !*** ./src/xyz-block-csr/block.json ***!
+  \**************************************/
+/***/ ((module) => {
+
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"my-plugin/xyz-block-csr","version":"1.0.0","title":"XYZ Block (CSR): context.postId demo","category":"widgets","icon":"smiley","supports":{"html":false},"textdomain":"my-plugin","editorScript":"file:./index.js","usesContext":["postId"]}');
+
 /***/ })
 
 /******/ 	});
@@ -113,23 +123,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./block.json */ "./src/xyz-block-csr/block.json");
 
 /**
  * WordPress dependencies
  */
 
 
+
+/**
+ * Internal dependencies
+ */
+
 const Edit = ({
   context
 }) => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
   ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
 }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "[XYZ ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("b", null, "Block"), " (CSR)] Post ID is ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", null, context.postId), "."));
-(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.registerBlockType)('my-plugin/xyz-block-csr', {
-  apiVersion: 3,
-  title: 'XYZ Block (CSR): context.postId demo',
-  icon: 'megaphone',
-  category: 'widgets',
-  usesContext: ['postId'],
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_3__.name, {
   edit: Edit,
   // We don't return any markup or save anything to the post content because
   // this is a dynamic block.

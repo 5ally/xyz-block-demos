@@ -40,6 +40,16 @@ module.exports = window["wp"]["element"];
 
 module.exports = window["wp"]["serverSideRender"];
 
+/***/ }),
+
+/***/ "./src/xyz-block-ssr/block.json":
+/*!**************************************!*\
+  !*** ./src/xyz-block-ssr/block.json ***!
+  \**************************************/
+/***/ ((module) => {
+
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"my-plugin/xyz-block-ssr","version":"1.0.0","title":"XYZ Block (SSR): context.postId demo","category":"widgets","icon":"smiley","supports":{"html":false},"textdomain":"my-plugin","editorScript":"file:./index.js","usesContext":["postId"]}');
+
 /***/ })
 
 /******/ 	});
@@ -125,12 +135,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_server_side_render__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/server-side-render */ "@wordpress/server-side-render");
 /* harmony import */ var _wordpress_server_side_render__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_server_side_render__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/xyz-block-ssr/block.json");
 
 /**
  * WordPress dependencies
  */
 
 
+
+
+/**
+ * Internal dependencies
+ */
 
 const Edit = ({
   context,
@@ -148,12 +164,7 @@ const Edit = ({
     post_id: context.postId
   }
 }));
-(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.registerBlockType)('my-plugin/xyz-block-ssr', {
-  apiVersion: 3,
-  title: 'XYZ Block (SSR): context.postId demo',
-  icon: 'megaphone',
-  category: 'widgets',
-  usesContext: ['postId'],
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_4__.name, {
   edit: Edit,
   // We don't return any markup or save anything to the post content because
   // this is a dynamic block.
