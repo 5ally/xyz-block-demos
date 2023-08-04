@@ -5,6 +5,11 @@ import { registerBlockType } from '@wordpress/blocks';
 import { useBlockProps } from '@wordpress/block-editor';
 import ServerSideRender from '@wordpress/server-side-render';
 
+/**
+ * Internal dependencies
+ */
+import metadata from './block.json';
+
 const Edit = ( { context, attributes } ) => (
 	<div { ...useBlockProps() }>
 		<ServerSideRender
@@ -21,12 +26,7 @@ const Edit = ( { context, attributes } ) => (
 	</div>
 );
 
-registerBlockType( 'my-plugin/xyz-block-ssr', {
-	apiVersion: 3,
-	title: 'XYZ Block (SSR): context.postId demo',
-	icon: 'megaphone',
-	category: 'widgets',
-	usesContext: [ 'postId' ],
+registerBlockType( metadata.name, {
 	edit: Edit,
 	// We don't return any markup or save anything to the post content because
 	// this is a dynamic block.
